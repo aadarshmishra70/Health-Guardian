@@ -1,4 +1,4 @@
-<?php include 'admin_header.php'; ?>
+<?php include 'doctor_header.php'; ?>
 <div class="container-fluid">
     <div class="row mt-3">
         <div class="col">
@@ -22,7 +22,7 @@
                         require_once "../includes/config.php";
                         
                         // Fetch appointments data
-                        $sql_appointments = "SELECT * FROM appointments";
+                        $sql_appointments = "SELECT * FROM users inner join doctors on users.id = doctors.user_id inner join appointments on doctors.id = appointments.doctor_id where doctors.user_id = $_SESSION[user_id]";
                         $result_appointments = $conn->query($sql_appointments);
                         $appointments = array();
 
@@ -57,4 +57,4 @@
     </div>
 
 </div>
-<?php include 'admin_footer.php'; ?>
+<?php include 'doctor_footer.php'; ?>

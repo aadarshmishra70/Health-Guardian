@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $address = $_POST['address'];
+    $name = $_POST['name'];
     $height = $_POST['height'];
     $weight = $_POST['weight'];
     $phone = $_POST['phone'];
@@ -23,9 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user_id = $stmt->insert_id;
 
         // Insert data into patients table
-        $query = "INSERT INTO patients (user_id, address, height, weight, phone, sex) VALUES (?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO patients (user_id, address, name, height, weight, phone, sex) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("isssss", $user_id, $address, $height, $weight, $phone, $sex);
+        $stmt->bind_param("issssss", $user_id, $address, $name, $height, $weight, $phone, $sex);
         if ($stmt->execute()) {
             // Registration successful, redirect to login page
             header("Location: login.php");
@@ -55,6 +56,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
                         </div>
                         <div class="mb-3">
                             <label for="address" class="form-label">Address</label>

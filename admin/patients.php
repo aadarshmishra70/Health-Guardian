@@ -25,12 +25,7 @@
                         require_once "../includes/config.php"; 
                         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_patient'])) {
                             $patient_id = $_POST['patient_id'];
-                            
-                            // Delete associated records from the ambulances table
-                            $sql_delete_ambulances = "DELETE FROM ambulances WHERE patient_id = $patient_id";
-                            if ($conn->query($sql_delete_ambulances) === FALSE) {
-                                echo '<div class="alert alert-danger" role="alert">Error deleting associated ambulances: ' . $conn->error . '</div>';
-                            }
+                         
                             
                             // Delete associated record from the users table
                             $sql_delete_users = "DELETE FROM users WHERE id = (SELECT user_id FROM patients WHERE id = $patient_id)";

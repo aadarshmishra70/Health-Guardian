@@ -28,7 +28,7 @@
             <input type="text" class="form-control" id="phone" name="phone" required>
         </div>
         <div class="form-group">
-            <label for="points">Points:</label>
+            <label for="points">Fee:</label>
             <input type="text" class="form-control" id="points" name="points" required>
         </div>
         <button type="submit" class="btn btn-primary">Add Doctor</button>
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt_user->close();
 
     // Prepare and execute SQL query to insert the doctor's data into the doctors table
-    $sql_doctor = "INSERT INTO doctors (name, qualification, phone, points, user_id) VALUES (?, ?, ?, ?, ?)";
+    $sql_doctor = "INSERT INTO doctors (name, specialization, phone, fee, user_id) VALUES (?, ?, ?, ?, ?)";
     $stmt_doctor = $conn->prepare($sql_doctor);
     $stmt_doctor->bind_param("ssssi", $name, $qualification, $phone, $points, $user_id);
 

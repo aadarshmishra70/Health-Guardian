@@ -51,9 +51,9 @@
                             while ($row = $result->fetch_assoc()) {
                                 echo '<tr>';
                                 echo '<td>' . $row['name'] . '</td>';
-                                echo '<td>' . $row['qualification'] . '</td>';
+                                echo '<td>' . $row['specialization'] . '</td>';
                                 echo '<td>' . $row['phone'] . '</td>';
-                                echo '<td>' . $row['points'] . '</td>';
+                                echo '<td>' . $row['fee'] . '</td>';
                                 echo '<td>
                                         <form method="post" action="">
                                             <input type="hidden" name="doctor_id" value="' . $row['id'] . '">
