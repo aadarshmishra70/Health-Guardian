@@ -10,15 +10,28 @@
 <body>
     <header>
         <div class="container">
-            <h1>Hospital Guardian</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="about.php">About</a></li>
-                    <li><a href="contact.php">Contact Us</a></li>
-                </ul>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="index.php"><h2>Hospital Guardian</h2></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="index.php">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="about.php">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="contact.php">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="login.php" class="btn btn-primary me-3">Login</a>
+                <a href="register.php" class="btn btn-primary">Register</a>
             </nav>
-            <button><a href="login.php">Login</a></button>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </header>
